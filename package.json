@@ -1,26 +1,26 @@
 {
-  "name": "node_practice",
+  "name": "Node_practice",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index",
+    "start": "node index.js",
     "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Pecherskiy88/Node_practice.git"
   },
-  "keywords": [
-    "node",
-    "node.js"
-  ],
-  "author": "Pecherskiy Artyom <pecherskiy88@gmail.com>",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Pecherskiy88/Node_practice/issues"
   },
   "homepage": "https://github.com/Pecherskiy88/Node_practice#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
   "devDependencies": {
     "nodemon": "^2.0.4"
   }
