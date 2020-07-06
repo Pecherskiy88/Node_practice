@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/Pecherskiy88/Node_practice#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.5"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
