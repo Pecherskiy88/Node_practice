@@ -26,8 +26,6 @@ class Course {
     const idx = courses.findIndex((c) => c.id === course.id);
     courses[idx] = course;
 
-    console.log('courses: ', courses);
-
     return new Promise((resolve, reject) => {
       fs.writeFile(
         path.join(__dirname, '..', 'data', 'courses.json'),
