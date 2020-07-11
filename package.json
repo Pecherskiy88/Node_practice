@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Pecherskiy88/Node_practice#readme",
   "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.3",
     "express": "^4.17.1",
     "express-handlebars": "^4.0.5",
     "mongoose": "^5.9.22",
