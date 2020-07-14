@@ -11,11 +11,19 @@ router.get('/', (req, res) => {
 
 router.post('/', async (req, res) => {
   const { title, price, img } = req.body;
-  const course = new Course(title, price, img);
+  const course = new Course({
+    title,
+    price,
+    img,
+    userId: req.user._id,
+  });
 
-  await course.save();
-
-  res.redirect('/courses');
+  try {
+    await course.save();
+    res.redirect('/courses');
+  } catch (e) {
+    console.log('Save BD Error: ', e);
+  }
 });
 
 module.exports = router;
