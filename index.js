@@ -1,6 +1,7 @@
 const express = require('express');
 const Handlebars = require('handlebars');
 const exphbs = require('express-handlebars');
+const session = require('express-session');
 const path = require('path');
 const mongoose = require('mongoose');
 const {
@@ -15,7 +16,7 @@ const cardRoutes = require('./routes/card');
 const ordersRoutes = require('./routes/orders');
 const authRoutes = require('./routes/auth');
 
-const User = require('./models/user');
+const varMiddleware = require('./middleware/variables');
 
 const app = express();
 
@@ -31,18 +32,16 @@ app.engine(
 app.set('view engine', 'hbs');
 app.set('views', 'views');
 
-app.use(async (req, res, next) => {
-  try {
-    const user = await User.findById('5f0c210b8e220c9928756ee4');
-    req.user = user;
-    next();
-  } catch (e) {
-    console.log('req.user Error: ', e);
-  }
-});
-
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
+app.use(
+  session({
+    secret: 'some secret value',
+    resave: false,
+    saveUninitialized: false,
+  }),
+);
+app.use(varMiddleware);
 
 app.use('/', homeRoutes);
 app.use('/add', addRoutes);
@@ -63,15 +62,15 @@ async function start() {
       useFindAndModify: false,
     });
 
-    const candidate = await User.findOne();
-    if (!candidate) {
-      const user = new User({
-        email: 'pecherskiy88@gmail.com',
-        name: 'Artem',
-        cart: { items: [] },
-      });
-      await user.save();
-    }
+    // const candidate = await User.findOne();
+    // if (!candidate) {
+    //   const user = new User({
+    //     email: 'pecherskiy88@gmail.com',
+    //     name: 'Artem',
+    //     cart: { items: [] },
+    //   });
+    //   await user.save();
+    // }
 
     app.listen(PORT, () => {
       console.log(`Server is running on port ${PORT}`);

@@ -22,6 +22,7 @@
     "@handlebars/allow-prototype-access": "^1.0.3",
     "express": "^4.17.1",
     "express-handlebars": "^4.0.5",
+    "express-session": "^1.17.1",
     "mongoose": "^5.9.22",
     "uuid": "^8.2.0"
   },
