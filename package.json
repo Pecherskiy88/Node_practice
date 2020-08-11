@@ -20,6 +20,10 @@
   "homepage": "https://github.com/Pecherskiy88/Node_practice#readme",
   "dependencies": {
     "@handlebars/allow-prototype-access": "^1.0.3",
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "connect-mongodb-session": "^2.3.3",
+    "csurf": "^1.11.0",
     "express": "^4.17.1",
     "express-handlebars": "^4.0.5",
     "express-session": "^1.17.1",
