@@ -35,4 +35,15 @@
   margin-bottom: 2rem;
 }
 
-.
+.auth {
+  padding-top: 1rem;
+}
+
+.alert {
+  padding: 0.5rem 1 rem;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 1rem;
+  background-color: rgba(255, 0, 0, 0.3);
+  color: red;
+}
