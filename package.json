@@ -1,5 +1,5 @@
 {
-  "name": "Node_practice",
+  "name": "node_practice",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -28,6 +28,8 @@
     "express-handlebars": "^4.0.5",
     "express-session": "^1.17.1",
     "mongoose": "^5.9.22",
+    "nodemailer": "^6.4.11",
+    "nodemailer-sendgrid-transport": "^0.2.0",
     "uuid": "^8.2.0"
   },
   "devDependencies": {
