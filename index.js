@@ -10,6 +10,8 @@ const {
 } = require('@handlebars/allow-prototype-access');
 const csrf = require('csurf');
 const flash = require('connect-flash');
+const compression = require('compression');
+const helmet = require('helmet');
 
 // ROUTES
 const homeRoutes = require('./routes/home');
@@ -61,6 +63,9 @@ app.use(
 app.use(fileMiddleware.single('avatar'));
 app.use(csrf());
 app.use(flash());
+app.use(compression());
+// app.use(helmet()); // ломает загрузку картинок, нужно настраивать опции
+
 app.use(varMiddleware);
 app.use(userMiddleware);
 
